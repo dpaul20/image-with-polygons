@@ -62,8 +62,9 @@ const ImageWithPolygons: React.FC = () => {
     <div>
       <h1>Image with polygons</h1>
       <p>Upload an image and a JSON file with boxes</p>
+      <h2>Upload an image</h2>
       <input type="file" accept="image/*" onChange={handleImageUpload} />
-      <p>Upload a JSON file with boxes</p>
+      <h2>Upload a JSON file with boxes</h2>
       <input type="file" accept="application/json" onChange={handleLoadBoxes} />
       {image && (
         <Stage width={dimensions.width} height={dimensions.height}>
