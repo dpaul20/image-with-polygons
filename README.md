@@ -1,6 +1,6 @@
 # Image with Polygons
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This is a project that allows users to upload an image and overlay polygons on the image. The polygons are defined in a JSON file that is also uploaded by the user.
 
 ## Getting Started
 
@@ -18,21 +18,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To use the application, follow these steps:
 
-## Learn More
+1. Cick on the "Upload Image" button and select an image from your device.
+2. Click on the "Upload JSON" button and select a JSON file that contains the polygon data. The polygons should be defined as an array of floating point numbers between 0 and 1, where odd-indexed values are the x coordinates and even-indexed values are the y coordinates.
+3. The polygons will automatically be drawn on the image.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment on Railway
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is deployed on Railway. You can view the live version of the application at [image-with-polygons](https://image-with-polygons-production.up.railway.app.)
