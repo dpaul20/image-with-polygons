@@ -1,5 +1,6 @@
 import ImageWithPolygons from "@/components/polygons/ImageWithPolygons";
 
-export default function Home() {
+
+export default function HomePage() {
   return <ImageWithPolygons />;
 }

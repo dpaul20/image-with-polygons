@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "mx-auto flex h-screen max-w-lg bg-background font-sans antialiased",
+          "mx-auto flex h-screen bg-background font-sans antialiased",
           inter.variable,
           roboto_mono.variable
         )}

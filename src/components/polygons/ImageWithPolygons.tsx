@@ -27,7 +27,7 @@ interface Polygon {
 /**
  * Component that displays an image with polygons.
  */
-const ImageWithPolygons: React.FC = () => {
+function ImageWithPolygons() {
   const [image, setImage] = useState<HTMLImageElement | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [boxes, setBoxes] = useState<Polygon[]>([]);
@@ -69,24 +69,7 @@ const ImageWithPolygons: React.FC = () => {
   };
 
   return (
-    <div className="flex h-[calc(100vh)] w-full items-center">
-      {image && (
-        <Stage width={dimensions.width} height={dimensions.height}>
-          <Layer>
-            <KonvaImage image={image} />
-            {boxes.map((box, i) => (
-              <Line
-                key={`box-${i}`}
-                points={box.polygon.flat()}
-                fill="red"
-                closed
-                scaleX={dimensions.width}
-                scaleY={dimensions.height}
-              />
-            ))}
-          </Layer>
-        </Stage>
-      )}
+    <div className="flex w-full flex-nowrap items-center justify-center gap-4">
       <Card className="max-w-screen-sm">
         <CardHeader>
           <CardTitle>Image with polygons</CardTitle>
@@ -118,8 +101,25 @@ const ImageWithPolygons: React.FC = () => {
           </div>
         </CardContent>
       </Card>
+      {image && (
+        <Stage width={dimensions.width} height={dimensions.height}>
+          <Layer>
+            <KonvaImage image={image} />
+            {boxes.map((box, i) => (
+              <Line
+                key={`box-${i}`}
+                points={box.polygon.flat()}
+                fill="red"
+                closed
+                scaleX={dimensions.width}
+                scaleY={dimensions.height}
+              />
+            ))}
+          </Layer>
+        </Stage>
+      )}
     </div>
   );
-};
+}
 
 export default ImageWithPolygons;
