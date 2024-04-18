@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Stage, Layer, Line, Image as KonvaImage } from "react-konva";
-
 import {
   Card,
   CardContent,
@@ -23,37 +22,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-
-const files = [
-  {
-    name: "image-1",
-    src: "/images/image-1.jpg",
-  },
-  {
-    name: "image-2",
-    src: "/images/image-2.jpg",
-  },
-  {
-    name: "data-1",
-    src: "/json/data-1.json",
-  },
-  {
-    name: "data-2",
-    src: "/json/data-2.json",
-  },
-];
-
-interface Polygon {
-  box: {
-    topX: number;
-    topY: number;
-    bottomX: number;
-    bottomY: number;
-  };
-  label: string;
-  score: number;
-  polygon: number[][];
-}
+import { files } from "@/lib/constant";
+import { Polygon } from "@/types/polygon";
 
 /**
  * Component that displays an image with polygons.
