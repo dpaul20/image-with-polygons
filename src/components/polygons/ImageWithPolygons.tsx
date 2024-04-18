@@ -2,6 +2,16 @@
 import React, { useState } from "react";
 import { Stage, Layer, Line, Image as KonvaImage } from "react-konva";
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
 interface Polygon {
   box: {
     topX: number;
@@ -59,13 +69,7 @@ const ImageWithPolygons: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Image with polygons</h1>
-      <p>Upload an image and a JSON file with boxes</p>
-      <h2>Upload an image</h2>
-      <input type="file" accept="image/*" onChange={handleImageUpload} />
-      <h2>Upload a JSON file with boxes</h2>
-      <input type="file" accept="application/json" onChange={handleLoadBoxes} />
+    <div className="flex h-[calc(100vh)] w-full items-center">
       {image && (
         <Stage width={dimensions.width} height={dimensions.height}>
           <Layer>
@@ -83,6 +87,37 @@ const ImageWithPolygons: React.FC = () => {
           </Layer>
         </Stage>
       )}
+      <Card className="max-w-screen-sm">
+        <CardHeader>
+          <CardTitle>Image with polygons</CardTitle>
+          <CardDescription>
+            Upload an image and a JSON file with boxes to display the image with
+            polygons.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-col gap-y-4">
+            <div className="grid w-full items-center gap-4">
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="image">Upload an image</Label>
+                <Input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                />
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="jsonFile">Upload a JSON file with boxes</Label>
+                <Input
+                  type="file"
+                  accept="application/json"
+                  onChange={handleLoadBoxes}
+                />
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

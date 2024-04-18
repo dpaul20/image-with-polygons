@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-slot": "^1.0.2",
     "canvas": "^2.11.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "konva": "^9.3.5",
+    "lucide-react": "^0.370.0",
     "next": "14.1.2",
     "next-google-fonts": "^2.2.0",
     "next-transpile-modules": "^10.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-konva": "^18.2.10",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7",
     "use-image": "^1.1.1"
   },
   "devDependencies": {

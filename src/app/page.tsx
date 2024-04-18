@@ -1,12 +1,4 @@
-import React from "react";
-import dynamic from "next/dynamic";
-
-const ImageWithPolygons = dynamic(
-  () => import("./components/polygons/ImageWithPolygons"),
-  {
-    ssr: false,
-  }
-);
+import ImageWithPolygons from "@/components/polygons/ImageWithPolygons";
 
 export default function Home() {
   return <ImageWithPolygons />;
