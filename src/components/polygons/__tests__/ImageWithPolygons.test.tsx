@@ -1,8 +1,6 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ImageWithPolygons from "../ImageWithPolygons";
-import { act } from "react-dom/test-utils";
-import Konva from "konva";
 
 describe("ImageWithPolygons", () => {
   test("renders without errors", () => {
