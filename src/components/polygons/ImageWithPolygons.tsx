@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "../ui/button";
 import {
   Table,
   TableBody,
@@ -22,8 +21,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-import { files } from "@/lib/constant";
 import { Polygon } from "@/types/polygon";
+import { Button } from "../ui/button";
+import { files } from "@/lib/constant";
 
 /**
  * Component that displays an image with polygons.
@@ -76,12 +76,13 @@ function ImageWithPolygons() {
       <div className="flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-4">
         {image ? (
           <Stage
+            data-testid="konva-stage"
             width={dimensions.width}
             height={dimensions.height}
             className="border border-gray-200"
           >
             <Layer>
-              <KonvaImage image={image} />
+              <KonvaImage data-testid="konva-image" image={image} />
               {boxes.map((box, i) => (
                 <Line
                   key={`box-${i}`}
@@ -111,8 +112,9 @@ function ImageWithPolygons() {
             <div className="flex flex-col gap-y-4">
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="image">Upload an image</Label>
+                  <Label htmlFor="imageInput">Upload an image</Label>
                   <Input
+                    id="imageInput"
                     ref={imageInputRef}
                     type="file"
                     accept="image/*"
@@ -124,6 +126,7 @@ function ImageWithPolygons() {
                     Upload a JSON file with boxes
                   </Label>
                   <Input
+                    id="jsonFile"
                     ref={jsonFileInputRef}
                     type="file"
                     accept="application/json"
